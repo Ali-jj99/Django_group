@@ -26,4 +26,12 @@ ul {
   li a:hover:not(.active) {
     text-decoration: underline;
   }
-  
+
+nav {
+display: flex;
+}
+
+img {
+    width:50px;
+    height: auto;
+}
