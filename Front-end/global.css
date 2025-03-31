@@ -26,4 +26,23 @@ ul {
   li a:hover:not(.active) {
     text-decoration: underline;
   }
+  .my-custom-row{
+    background-color: rgb(34, 108, 219);
+    font-family: SkyUI;
+    
+        }
+.row1{
+    background-color: darkgrey;
+    height: 75px;
+    font-family: SkyUI;
+}
+.row2{
+    background-color: rgb(34, 108, 219);
+    height: 400px;
+    font-family: SkyUI;
+}
+.float-start{
+    height: 25px;
+}
+
   
