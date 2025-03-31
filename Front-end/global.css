@@ -1,0 +1,24 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+  }
+  
+  li {
+    display: inline;
+    float: left;
+    background-color: white;
+  }
+  
+  li a {
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    text-decoration: underline;
+  }
+  
