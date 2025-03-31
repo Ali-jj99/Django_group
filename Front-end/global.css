@@ -26,6 +26,7 @@ ul {
   li a:hover:not(.active) {
     text-decoration: underline;
   }
+<<<<<<< HEAD
   .my-custom-row{
     background-color: rgb(34, 108, 219);
     font-family: SkyUI;
@@ -46,3 +47,14 @@ ul {
 }
 
   
+=======
+
+nav {
+display: flex;
+}
+
+img {
+    width:50px;
+    height: auto;
+}
+>>>>>>> 485cef5409e05494eb3d0244bbae17e5dea3e9db
