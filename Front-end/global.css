@@ -1,3 +1,7 @@
+@font-face {
+  font-family: SkyUI;
+  src: url(Sky\ Text.ttf);
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -16,6 +20,7 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: SkyUI;
   }
   
   li a:hover:not(.active) {
