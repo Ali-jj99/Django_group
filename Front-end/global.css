@@ -7,22 +7,23 @@ ul {
     margin: 0;
     padding: 0;
     background-color: #f3f3f3;
-  }
+}
   
-  li {
-    display: inline;
-    float: left;
-    background-color: white;
-  }
+li {
+  display: inline;
+  float: left;
+  background-color: white;
+}
   
-  li a {
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-family: SkyUI;
-  }
+li a {
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: SkyUI;
+}
   
+<<<<<<< HEAD
   li a:hover:not(.active) {
     text-decoration: underline;
   }
@@ -48,6 +49,11 @@ ul {
 
   
 =======
+=======
+li a:hover:not(.active) {
+  text-decoration: underline;
+}
+>>>>>>> 3097ea08c1b47e37e60e7364b944cbe07a0884e0
 
 nav {
 display: flex;
