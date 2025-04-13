@@ -1,25 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <link rel="stylesheet" href="global.css"/>
-    <link rel="icon" type="image/x-icon" href="images/sky.ico" >
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Login</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" href="global.css" integrity="sha384-M9Ff0LoKuzMWADdUynvCwWJrVfmdVWybAsq1Sy8xQGEqDb9vBvga8s3V0DkXEN7L" crossorigin="anonymous">
+  
+  <style>
+    body {
+      background-color: #4a4a4a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .login-container {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .login-logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+    }
+    .form-control {
+      background-color: #999;
+      color: #fff;
+      border: none;
+    }
+    .form-control::placeholder {
+      color: #ddd;
+    }
+    .btn-primary {
+      background-color: #3d5afe;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #2c47c4;
+    }
+    a {
+      color: #3d5afe;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .show-password {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <ul>
-        <li><img src="images/skylogo.png"/><a href="images/skylogo.ico"></a></li>
-        <li><a href="landing_page.html">Home</a></li>
-        <li><a href="voting_page.html">Voting</a></li>
-        <li><a href="dashboard_page.html">Dashboard</a></li>
-        <li><a href="team_summary.html">Team Summary</a></li>
-        <li><a href="progress_page.html">Progress</a></li>
-        <li><a href="sign_up.html">Sign up</a></li>
-        <li><a href="log_in.html">Sign in</a></li>
-    </ul>
-    <footer>
-        <!-- Footer section with a copyright symbol for our group-->
-        <h3 class="copyright">&copy; 2025 Kali Linux</h3>
-        </footer>
+
+  <div class="login-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Sky_Group_logo_2020.svg/2560px-Sky_Group_logo_2020.svg.png" alt="Sky Logo" class="login-logo">
+
+    <h3 class="text-center fw-bold mt-4 mb-4">LOG IN</h3>
+
+    <form>
+      <div class="mb-3">
+        <label for="email" class="form-label">Username or email address <a href="#">create an account?</a></label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email or username">
+      </div>
+
+      <div class="mb-3 position-relative">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password">
+        <span class="show-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="rememberMe">
+        <label class="form-check-label" for="rememberMe">keep me logged in</label>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Log in</button>
+      </div>
+
+      <p class="text-center mt-3">
+        <a href="#">forgot username or password ?</a>
+      </p>
+    </form>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-h4nK/xWsdYmXzK0vZP/PRzN9aFwYttlgF+ufRek4oivZ6XvAqOcfLh5Oj0jXRjtk" crossorigin="anonymous"></script>
+
+ 
+  <script>
+    function togglePassword() {
+      const input = document.getElementById("password");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+
 </body>
 </html>
