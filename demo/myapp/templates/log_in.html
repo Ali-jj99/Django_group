@@ -1,25 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <link rel="stylesheet" href="global.css"/>
-    <link rel="icon" type="image/x-icon" href="images/sky.ico" >
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Login</title>
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #3a3a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    }
+
+    .login-logo {
+      width: 60px;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .form-control {
+      background-color: #999;
+      color: #fff;
+      border: none;
+    }
+
+    .form-control::placeholder {
+      color: #eee;
+    }
+
+    .btn-login {
+      background-color: #3d5afe;
+      color: white;
+      border: none;
+    }
+
+    .btn-login:hover {
+      background-color: #2c47c4;
+    }
+
+    .show-password {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <ul>
-        <li><img src="images/skylogo.png"/><a href="images/skylogo.ico"></a></li>
-        <li><a href="landing_page.html">Home</a></li>
-        <li><a href="voting_page.html">Voting</a></li>
-        <li><a href="dashboard_page.html">Dashboard</a></li>
-        <li><a href="team_summary.html">Team Summary</a></li>
-        <li><a href="progress_page.html">Progress</a></li>
-        <li><a href="sign_up.html">Sign up</a></li>
-        <li><a href="log_in.html">Sign in</a></li>
-    </ul>
-    <footer>
-        <!-- Footer section with a copyright symbol for our group-->
-        <h3 class="copyright">&copy; 2025 Kali Linux</h3>
-        </footer>
+
+  <div class="login-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Sky_Group_logo_2020.svg" alt="Sky Logo" class="login-logo">
+
+    <h4 class="fw-bold mb-4">LOG IN</h4>
+
+    <form>
+      <div class="mb-3">
+        <label for="email" class="form-label">Username or email address <a href="#">create an account?</a></label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email or username">
+      </div>
+
+      <div class="mb-3 position-relative">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password">
+        <span class="show-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="rememberMe">
+        <label class="form-check-label" for="rememberMe">keep me logged in</label>
+      </div>
+
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-login">Log in</button>
+      </div>
+
+      <p class="text-center">
+        <a href="#">forgot username or password ?</a>
+      </p>
+    </form>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function togglePassword() {
+      const input = document.getElementById("password");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
 </body>
 </html>
