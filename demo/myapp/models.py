@@ -23,3 +23,15 @@ class Team(models.Model):
     userID = models.ForeignKey('User', on_delete=models.CASCADE, db_column='userID')
     healthCardID = models.ForeignKey('HealthCard', on_delete=models.CASCADE, db_column='healthCardID')
     departmentID = models.ForeignKey('Department', on_delete=models.CASCADE, db_column='departmentID')
+
+class Department(models.Model):
+    departmentID = models.IntegerField(primary_key=True)
+    name = models.TextField(null=False)
+
+class Session(models.Model):
+    sessionID = models.IntegerField(primary_key=True)
+    sessionDate = models.DateTimeField(null=False)
+    status = models.CharField(max_length=4, null=False, 
+                                            choices = [('Open', 'Open'),
+                                                       ('Closed', 'Closed')
+                                                ])
