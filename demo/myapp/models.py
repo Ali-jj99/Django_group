@@ -35,3 +35,37 @@ class Session(models.Model):
                                             choices = [('Open', 'Open'),
                                                        ('Closed', 'Closed')
                                                 ])
+    #Created User Table
+    class User(models.Model):
+        userID       = models.IntegerField(primary_key=True)
+    name         = models.TextField(null=False)
+    username     = models.CharField(max_length=150, unique=True, null=False)
+    email        = models.CharField(max_length=254, unique=True, null=False)
+    password     = models.CharField(max_length=128, null=False)
+    role = models.CharField(
+        max_length=20,
+        choices=[
+            ('Engineer',         'Engineer'),
+            ('TeamLeader',       'TeamLeader'),
+            ('DepartmentLeader', 'DepartmentLeader'),
+            ('SeniorManager',    'SeniorManager'),
+        ],
+        null=False
+    )
+    teamID = models.ForeignKey(
+        'Team',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        db_column='teamID'
+    )
+    departmentID = models.ForeignKey(
+        'Department',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        db_column='departmentID'
+    )
+
+    class Meta:
+        db_table = 'User'
