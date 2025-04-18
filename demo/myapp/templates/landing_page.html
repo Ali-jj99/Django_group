@@ -1,26 +1,151 @@
-{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="{% static 'global.css' %}"/>
-    <link rel="icon" type="image/x-icon" href="{%static 'images/skylogo.png'%}" >
-    <title>Home</title>
-</head> 
-<body>
-    <ul>
-        <li><img src="{% static 'images/skylogo.png' %}" alt="Sky Logo"/><a href="{% static 'images/skylogo.ico' %}"></a></li>
-        <li><a href="home">Home</a></li>
-        <li><a href="vote">Voting</a></li>
-        <li><a href="summary">Team Summary</a></li>
-        <li><a href="progress">Progress</a></li>
-        <li><a href="signup">Sign up</a></li>
-        <li><a href="login">Sign in</a></li>
-    </ul>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Health Check - Home</title>
 
-    <footer>
-        <!-- Footer section with a copyright symbol for our group-->
-        <h3 class="copyright">&copy; 2025 Kali Linux</h3>
-        </footer>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+
+    
+    .navbar-custom {
+      padding: 1rem;
+      background-color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+      background-color: #3d5afe;
+      color: white !important;
+      margin: 0 0.5rem;
+      border-radius: 25px;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      border: 1px solid black;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: #2c47c4;
+    }
+
+    .logo {
+      width: 80px;
+    }
+
+    .welcome-box {
+      background-color: #d3d3d3;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      margin: 3rem auto;
+      max-width: 600px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-start {
+      background-color: #3d5afe;
+      border: none;
+      border-radius: 25px;
+      padding: 0.5rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .btn-start:hover {
+      background-color: #2c47c4;
+    }
+
+    footer {
+      background-color: #d3d3d3;
+      padding: 2rem 1rem;
+    }
+
+    .footer-box {
+      background-color: #3d5afe;
+      color: white;
+      padding: 1rem;
+      border-radius: 15px;
+      margin: 1rem;
+      min-width: 200px;
+      border: 1px solid black;
+    }
+
+    .footer-box ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Sky_Group_logo_2020.svg/2560px-Sky_Group_logo_2020.svg.png" alt="Sky Logo" class="logo">
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">View Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Voting Page</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Progress</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Team Summary</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sign Up / Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="welcome-box">
+    <h3 class="fw-bold">Welcome to Sky Health Check</h3>
+    <p>
+      Our platform provides a web-based application which simplifies the process of visualising and assessing your team’s health.  
+      <br>Let’s get started!
+    </p>
+    <a href="#" class="btn btn-start text-white">Sign Up / Login</a>
+  </div>
+
+  
+  <footer>
+    <div class="container footer-flex text-center text-md-start">
+      <div class="footer-box">
+        <p class="mb-1">© 2025 Sky Health Check</p>
+        <ul class="mb-0">
+          <li>Privacy Policy</li>
+          <li>Help</li>
+          <li>Current Version 1.0</li>
+        </ul>
+      </div>
+      <div class="footer-box">
+        <p class="mb-1 fw-bold">Contact Us</p>
+        <ul class="mb-0">
+          <li>support@skyhealthcheck.com</li>
+          <li>Sky Health Check Department<br>TW7 5QD, UK</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
