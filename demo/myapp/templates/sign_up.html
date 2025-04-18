@@ -1,17 +1,30 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'global.css' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sign Up - User</title>
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Bootstrap Icons for the eye icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+
     <style>
         body {
             background-color: #555;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
         }
         .signup-container {
             max-width: 400px;
-            margin: 50px auto;
+            width: 100%;
             background-color: white;
             padding: 30px;
             border-radius: 30px;
@@ -20,66 +33,106 @@
         .form-control {
             border-radius: 25px;
             background-color: #eee;
+            border: none;
+            height: 3rem;
+            padding: 0 1rem;
         }
         .toggle-password {
-            cursor: pointer;
             position: absolute;
-            right: 15px;
-            top: 10px;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .btn-primary {
+            border-radius: 25px;
+            padding: 0.75rem;
         }
     </style>
 </head>
 <body>
+    <ul>
+        <li><img src="{% static 'images/skylogo.png' %}" alt="Sky Logo"/><a href="{% static 'images/skylogo.ico' %}"></a></li>
+        <li><a href="home">Home</a></li>
+        <li><a href="vote">Voting</a></li>
+        <li><a href="summary">Team Summary</a></li>
+        <li><a href="progress">Progress</a></li>
+        <li><a href="signup">Sign up</a></li>
+        <li><a href="login">Sign in</a></li>
+    </ul>
 
 <div class="signup-container">
     <h2 class="text-center mb-4"><strong>Sign Up</strong></h2>
     <form class="User">
+        <!-- First Name -->
         <div class="mb-3">
             <label class="form-label">First name</label>
             <input type="text" class="form-control" name="firstName" required>
         </div>
+        <!-- Last Name -->
         <div class="mb-3">
             <label class="form-label">Last name</label>
             <input type="text" class="form-control" name="lastName" required>
         </div>
+        <!-- Email -->
         <div class="mb-3">
             <label class="form-label">Email</label>
             <input type="email" class="form-control" name="email" required>
         </div>
+        <!-- Birth Date -->
         <div class="mb-3">
             <label class="form-label">Birth date</label>
             <input type="date" class="form-control" name="birthDate" required>
         </div>
+        <!-- Phone Number -->
         <div class="mb-3">
             <label class="form-label">Phone number</label>
             <input type="tel" class="form-control" name="phone" required>
         </div>
+        <!-- Password -->
         <div class="mb-3 position-relative">
             <label class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password" required>
-            <span class="toggle-password" onclick="toggleVisibility('password')">👁️</span>
+            <span class="toggle-password" data-target="password">
+          <i class="bi bi-eye-fill"></i>
+        </span>
         </div>
+        <!-- Confirm Password -->
         <div class="mb-4 position-relative">
             <label class="form-label">Confirm password</label>
             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
-            <span class="toggle-password" onclick="toggleVisibility('confirmPassword')">👁️</span>
+            <span class="toggle-password" data-target="confirmPassword">
+          <i class="bi bi-eye-fill"></i>
+        </span>
         </div>
-        <button type="submit" class="btn btn-primary w-100 rounded-pill">Continue Sign Up</button>
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary w-100">Continue Sign Up</button>
     </form>
     <div class="text-center mt-3">
         <small>Already have an account? <a href="#">Log in</a></small>
     </div>
 </div>
 
+<!-- Bootstrap JS (optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Password‐toggle script -->
 <script>
-    function toggleVisibility(id) {
-        const input = document.getElementById(id);
-        if (input.type === "password") {
-            input.type = "text";
-        } else {
-            input.type = "password";
-        }
-    }
+    document.querySelectorAll('.toggle-password').forEach(toggler => {
+        toggler.addEventListener('click', () => {
+            const input = document.getElementById(toggler.dataset.target);
+            const icon  = toggler.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('bi-eye-slash-fill', 'bi-eye-fill');
+            }
+        });
+    });
 </script>
 
 </body>
